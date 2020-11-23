@@ -26,13 +26,16 @@ namespace SuperJet_2._1.Forms
         private void InitializeComponent()
         {
             my_Menu_Strip menu_Strip = new my_Menu_Strip();
-
+            // 
+            // ToolStripMenuItem
+            // 
             ToolStripMenuItem menuItem, menuItem1;
             menuItem = menu_Strip.My_Menu("File");
             menuItem.DropDownItems.Add("Создать").Click += MDI_Form_Click;
-            menuItem.DropDownItems.Add("Открыть").Click += MDI_Form_Click1; ;
-            menuItem.DropDownItems.Add("Сохранить").Click += MDI_Form_Click2; ;
+            menuItem.DropDownItems.Add("Открыть").Click += MDI_Form_Click1;
+            menuItem.DropDownItems.Add("Сохранить").Click += MDI_Form_Click2;
             menuItem1 = menu_Strip.My_Menu("Report");
+            menuItem1.DropDownItems.Add("Создать").Click += MDI_Form_Click3; ;
             menuItem1.DropDownItems.Add("Отправить");
             this.SuspendLayout();
             // 
@@ -50,14 +53,22 @@ namespace SuperJet_2._1.Forms
             // 
             this.IsMdiContainer = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.AutoScaleMode = AutoScaleMode.Font;
+            this.WindowState = FormWindowState.Maximized;
+            //this.ClientSize = new System.Drawing.Size(1024, 800);
             this.Controls.Add(menu_Strip);
             this.MainMenuStrip = menu_Strip;
             this.Name = "MDI_Form";
             this.Text = "Родительская форма";
             this.ResumeLayout(false);
             this.PerformLayout();
+        }
+
+        private void MDI_Form_Click3(object sender, EventArgs e)
+        {
+            Form KPI = new KPI();
+            KPI.MdiParent = this;
+            KPI.Show();
         }
 
         private void MDI_Form_Click2(object sender, EventArgs e)
