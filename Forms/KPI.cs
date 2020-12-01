@@ -34,15 +34,12 @@ namespace SuperJet_2._1.Forms
             //
             My_Label label1 = new My_Label("Конвертация по нарядам :");
             label1.Location = new Point(10, 100);
-            //label1.Height = 30;
             label1.Width = 280;
             label1.Font = new Font("Arial", 15.75F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(204)));
             this.Controls.Add(label1);
 
             My_TextBox textBox1 = new My_TextBox("");
             textBox1.Location = new Point(300, 100);
-            //label1.Height = 30;
-            //textBox1.Width = 300;
             textBox1.Enabled = false;
             textBox1.Font = new Font("Arial", 15.75F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(204)));
             this.Controls.Add(textBox1);
