@@ -4,35 +4,35 @@ using SuperJet_2._1.Toolbox;
 namespace SuperJet_2._1.Forms
 {
     class Worcker_in: BaseForm
-    {
-        Label[] ArrayLabels = new Label[5];
-        TextBox[] ArraytextBoxes = new TextBox[5];
+    {       
         public Worcker_in()
         {
-            MyHeight = 900;
-            MyWidgth = 1200;
-            Create_MyForm();
             InitializeComponent();
         }
 
         private void InitializeComponent()
         {
+            MyHeight = 900;
+            MyWidgth = 1200;
+            Create_MyForm();
             GenerateLable();
             GenerateTextBox();
+            GenerateButton();
         }
 
         private void GenerateLable()
         {
-            for (int i = 0; i < 5; i++)
+            Label[] ArrayLabels = new Label[5];
+            for (int i = 0; i < ArrayLabels.Length; i++)
             {
                 My_Label l_box = new My_Label();
                 l_box.X = 30;
-                l_box.Y = 50 + (i * 40);
+                l_box.Y = 100 + (i * 40);
                 l_box.MyHeight = 30;
                 l_box.MyWidgth = 200;
-                Label newLabel = l_box.Create_MyLabel();
-                newLabel.Name = "Label" + (i + 1);
-                ArrayLabels[i] = newLabel;
+                l_box.Name = "Label" + (i + 1);
+                l_box = (My_Label)l_box.Create_MyLabel();
+                ArrayLabels[i] = l_box;
 
             }
             //
@@ -52,15 +52,16 @@ namespace SuperJet_2._1.Forms
 
         private void GenerateTextBox()
         {
-            for (int i = 0; i < 5; i++)
+            TextBox[] ArraytextBoxes = new TextBox[5];
+            for (int i = 0; i < ArraytextBoxes.Length; i++)
             {
                 My_TextBox t_box = new My_TextBox();
                 t_box.X = 250;
-                t_box.Y = 50 + (i * 40);
+                t_box.Y = 100 + (i * 40);
                 t_box.MyHeight = 30;
                 t_box.MyWidgth = 300;
-                TextBox newTextbox = t_box.Create_MyTextbox();
-                newTextbox.Name = "TextBox" + (i + 1);
+                t_box.Name = "TextBox" + (i + 1);
+                t_box = (My_TextBox)t_box.Create_MyTextbox();
                 ArraytextBoxes[i] = t_box;
             }
             //
@@ -76,6 +77,18 @@ namespace SuperJet_2._1.Forms
             ArraytextBoxes[2].Text = "";
             ArraytextBoxes[3].Text = "";
             ArraytextBoxes[4].Text = "";
+        }
+
+        private void GenerateButton()
+        {
+            My_Button button = new My_Button();
+            button.MyHeight = 70;
+            button.MyWidgth = 200;
+            button.X = 30;
+            button.Y = 730;
+            button.Text = "Принять";
+            button = (My_Button)button.Create_MyButton();
+            Controls.Add(button);
         }
     }
 }
