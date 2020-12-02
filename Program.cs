@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using SuperJet_2._1.Forms;
+using System;
 using System.Windows.Forms;
 
 namespace SuperJet_2._1
@@ -18,5 +16,6 @@ namespace SuperJet_2._1
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Main_Form());
         }
+
     }
 }
