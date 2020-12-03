@@ -1,23 +1,55 @@
-﻿using System.Windows.Forms;
+﻿using System;
+using System.Windows.Forms;
 using SuperJet_2._1.Toolbox;
 
 namespace SuperJet_2._1.Forms
 {
     class Worcker_in: BaseForm
-    {       
+    {
+        User_Language language = new User_Language();
+        TextBox[] ArraytextBoxes = new TextBox[5];
+
         public Worcker_in()
         {
             InitializeComponent();
+
         }
 
         private void InitializeComponent()
         {
-            MyHeight = 900;
-            MyWidgth = 1200;
+            MyHeight = 500;
+            MyWidgth = 600;
             Create_MyForm();
+            NameForm();
             GenerateLable();
             GenerateTextBox();
-            GenerateButton();
+            Button button1 = GenerateButton();
+            button1.Click += Button1_Click;
+            
+            
+            this.Load += Worcker_in_Load;
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            GeneratePassword();
+        }
+
+        private void Worcker_in_Load(object sender, System.EventArgs e)
+        {
+            language.input_RU_language();
+        }
+
+        private void NameForm()
+        {
+            My_Label nameFormLabel = new My_Label();
+            nameFormLabel.X = 150;
+            nameFormLabel.Y = 30;
+            nameFormLabel.MyHeight = 30;
+            nameFormLabel.MyWidgth = 300;
+            nameFormLabel.Text = "Форма приема сотрудника";
+            nameFormLabel.Create_MyLabel();
+            Controls.Add(nameFormLabel);
         }
 
         private void GenerateLable()
@@ -52,7 +84,7 @@ namespace SuperJet_2._1.Forms
 
         private void GenerateTextBox()
         {
-            TextBox[] ArraytextBoxes = new TextBox[5];
+            
             for (int i = 0; i < ArraytextBoxes.Length; i++)
             {
                 My_TextBox t_box = new My_TextBox();
@@ -72,23 +104,34 @@ namespace SuperJet_2._1.Forms
                 Controls.Add(textBox);
             }
 
-            ArraytextBoxes[0].Text = "";
-            ArraytextBoxes[1].Text = "";
-            ArraytextBoxes[2].Text = "";
-            ArraytextBoxes[3].Text = "";
-            ArraytextBoxes[4].Text = "";
         }
 
-        private void GenerateButton()
+        private Button GenerateButton()
         {
             My_Button button = new My_Button();
             button.MyHeight = 70;
             button.MyWidgth = 200;
-            button.X = 30;
-            button.Y = 730;
+            button.X = 190;
+            button.Y = 370;
             button.Text = "Принять";
             button = (My_Button)button.Create_MyButton();
             Controls.Add(button);
+            return button;
         }
+
+        private void GeneratePassword()
+        {
+            My_Label Password = new My_Label();
+            Password.X = 150;
+            Password.Y = 300;
+            Password.MyHeight = 30;
+            Password.MyWidgth = 300;
+            string passVol = ArraytextBoxes[0].Text + ArraytextBoxes[1].Text + ArraytextBoxes[2].Text;
+            //Password.Text = ("Ваш пароль{0}", passVol.GetHashCode());
+            Password.Create_MyLabel();
+            Controls.Add(Password);
+            
+        }
+
     }
 }
