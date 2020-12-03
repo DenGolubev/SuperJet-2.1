@@ -1,19 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
 using System.Drawing;
 
 namespace SuperJet_2._1.Toolbox
 {
     class My_TextBox: TextBox
     {
-        public My_TextBox(string text)
+        public int X { get; set; }
+        public int Y { get; set; }
+        public int MyWidgth { get; set; }
+        public int MyHeight { get; set; }
+
+        public TextBox Create_MyTextbox()
         {
-            new TextBox();
-            this.Text = text;
+            Size = new Size(MyWidgth, MyHeight);
+            Location = new Point(X, Y);
+            return this;
         }
     }
 }

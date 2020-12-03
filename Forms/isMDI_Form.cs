@@ -26,7 +26,7 @@ namespace SuperJet_2._1.Forms
             // 
             // ToolStripMenuItem
             // 
-            ToolStripMenuItem menuItem, menuItem1;
+            ToolStripMenuItem menuItem, menuItem1, menuItem2;
             menuItem = new ToolStripMenuItem("Файл");
             menuItem.DropDownItems.Add("Создать").Click += IsMDI_Form_Click; ;
             menuItem.DropDownItems.Add("Открыть").Click += IsMDI_Form_Click1; ;
@@ -34,6 +34,9 @@ namespace SuperJet_2._1.Forms
             menuItem1 = new ToolStripMenuItem("Отчеты");
             menuItem1.DropDownItems.Add("Создать").Click += IsMDI_Form_Click3; ;
             menuItem1.DropDownItems.Add("Отправить");
+            menuItem2 = new ToolStripMenuItem("Сотрудники");
+            menuItem2.DropDownItems.Add("Принять на работу").Click += IsMDI_Form_Click4; ;
+            menuItem2.DropDownItems.Add("Уволить с работы");
 
             // 
             // menuStrip
@@ -46,10 +49,19 @@ namespace SuperJet_2._1.Forms
             menu_Strip.Text = "menuStrip";
             menu_Strip.Items.Add(menuItem);
             menu_Strip.Items.Add(menuItem1);
+            menu_Strip.Items.Add(menuItem2);
 
             return menu_Strip;
         }
-        
+
+        private void IsMDI_Form_Click4(object sender, System.EventArgs e)
+        {
+            Worcker_in new_Worcker_in = new Worcker_in();
+            new_Worcker_in.MdiParent = this;
+
+            new_Worcker_in.Show();
+        }
+
         private void IsMDI_Form_Click3(object sender, System.EventArgs e)
         {
             string my_Message = "Здесь должна быть форма KPI";
