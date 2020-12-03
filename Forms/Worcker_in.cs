@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Security.Cryptography;
 using System.Windows.Forms;
 using SuperJet_2._1.Toolbox;
 
@@ -32,6 +33,7 @@ namespace SuperJet_2._1.Forms
 
         private void Button1_Click(object sender, EventArgs e)
         {
+            GenerateLogin();
             GeneratePassword();
         }
 
@@ -122,16 +124,59 @@ namespace SuperJet_2._1.Forms
         private void GeneratePassword()
         {
             My_Label Password = new My_Label();
-            Password.X = 150;
-            Password.Y = 300;
+            Password.X = 30;
+            Password.Y = 340;
             Password.MyHeight = 30;
             Password.MyWidgth = 300;
-            string passVol = ArraytextBoxes[0].Text + ArraytextBoxes[1].Text + ArraytextBoxes[2].Text;
-            //Password.Text = ("Ваш пароль{0}", passVol.GetHashCode());
+            string passVol = ArraytextBoxes[0].Text + ArraytextBoxes[1].Text + ArraytextBoxes[2].Text + ArraytextBoxes[3].Text;
+            Password.Text = "Ваш пароль: " + passVol.GetHashCode();
             Password.Create_MyLabel();
             Controls.Add(Password);
             
         }
+
+        private void GenerateLogin()
+        {
+            My_Label Login = new My_Label();
+            Login.X = 30;
+            Login.Y = 300;
+            Login.MyHeight = 30;
+            Login.MyWidgth = 400;
+            Login.Text = "Ваш логин: " + Translit(ArraytextBoxes[0].Text);
+            Login.Create_MyLabel();
+            Controls.Add(Login);
+
+        }
+
+        public string Translit(string login)
+        {
+            string myLog = null;
+            string trans_lit = login;
+            trans_lit = trans_lit.ToUpper();
+            char[] loginArray = trans_lit.ToCharArray();
+            string[] rus = {"А","Б","В","Г","Д","Е","Ё","Ж", "З","И","Й","К","Л","М", "Н",
+          "О","П","Р","С","Т","У","Ф","Х", "Ц", "Ч", "Ш", "Щ",   "Ъ", "Ы","Ь",
+          "Э","Ю", "Я" };
+            string[] eng = {"A","B","V","G","D","E","E","ZH","Z","I","Y","K","L","M","N",
+          "O","P","R","S","T","U","F","KH","TS","CH","SH","SHCH",null,"Y",null,
+          "E","YU","YA"};
+            for(int i = 0; i < loginArray.Length; i++)
+            {
+                for(int y = 0; y < rus.Length; y++)
+                {
+                    if(Convert.ToString(loginArray[i]) == rus[y])
+                    {
+
+                        myLog += eng[y]; 
+                        break;
+                    }
+                }
+            }
+            
+            return myLog;
+        }
+
+
 
     }
 }
