@@ -84,9 +84,9 @@
     <Compile Include="Forms\Worcker_out.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PartClassDesigner\BaseForm.Designer.cs" />
-    <Compile Include="PartClassDesigner\isMDI_Form.Designer.cs" />
-    <Compile Include="PartClassDesigner\Worcker_out.Designer.cs" />
+    <Compile Include="PartClassDesignerforForms\BaseForm.Designer.cs" />
+    <Compile Include="PartClassDesignerforForms\isMDI_Form.Designer.cs" />
+    <Compile Include="PartClassDesignerforForms\Worcker_out.Designer.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReadFile\Read_excel_xls.cs" />
@@ -104,7 +104,7 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="User_Language.cs" />
-    <Compile Include="PartClassDesigner\Worcker_in.Designer.cs" />
+    <Compile Include="PartClassDesignerforForms\Worcker_in.Designer.cs" />
     <EmbeddedResource Include="Forms\Main_Form.resx">
       <DependentUpon>Main_Form.cs</DependentUpon>
     </EmbeddedResource>
