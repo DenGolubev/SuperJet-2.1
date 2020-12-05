@@ -10,12 +10,17 @@ namespace SuperJet_2._1.Forms
         {
             InitializeComponent();
         }
+        private void IsMDI_Form_Click5(object sender, System.EventArgs e)
+        {
+            Worcker_out new_Worcker_out = new Worcker_out();
+            new_Worcker_out.MdiParent = this;
+            new_Worcker_out.Show();
+        }
 
         private void IsMDI_Form_Click4(object sender, EventArgs e)
         {
             Worcker_in new_Worcker_in = new Worcker_in();
             new_Worcker_in.MdiParent = this;
-
             new_Worcker_in.Show();
         }
 

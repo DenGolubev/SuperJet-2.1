@@ -26,7 +26,7 @@ namespace SuperJet_2._1.Forms
             this.Load += Worcker_in_Load;
         }
 
-        private void NameFormLable()
+        protected void NameFormLable()
         {
             My_Label nameFormLabel = new My_Label();
             nameFormLabel.X = 150;
@@ -38,7 +38,7 @@ namespace SuperJet_2._1.Forms
             Controls.Add(nameFormLabel);
         }
 
-        private void GenerateLable()
+        protected void GenerateLable()
         {
             Label[] ArrayLabels = new Label[5];
             for (int i = 0; i < ArrayLabels.Length; i++)
@@ -68,7 +68,7 @@ namespace SuperJet_2._1.Forms
             ArrayLabels[4].Text = "E-Mail";
         }
 
-        private void GenerateTextBox()
+        protected void GenerateTextBox()
         {
 
             for (int i = 0; i < ArraytextBoxes.Length; i++)
@@ -92,7 +92,7 @@ namespace SuperJet_2._1.Forms
 
         }
 
-        private Button GenerateButton()
+        protected Button GenerateButton()
         {
             My_Button button = new My_Button();
             button.MyHeight = 70;
@@ -105,7 +105,7 @@ namespace SuperJet_2._1.Forms
             return button;
         }
 
-        private void GeneratePassword()
+        protected void GeneratePassword()
         {
             My_Label Password = new My_Label();
             Password.X = 30;
@@ -119,7 +119,7 @@ namespace SuperJet_2._1.Forms
 
         }
 
-        private void GenerateLogin()
+        protected void GenerateLogin()
         {
             My_Label Login = new My_Label();
             Login.X = 30;

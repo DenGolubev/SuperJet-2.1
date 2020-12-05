@@ -31,7 +31,7 @@ namespace SuperJet_2._1.Forms
             menuItem1.DropDownItems.Add("Отправить");
             menuItem2 = new ToolStripMenuItem("Сотрудники");
             menuItem2.DropDownItems.Add("Принять на работу").Click += IsMDI_Form_Click4; ;
-            menuItem2.DropDownItems.Add("Уволить с работы");
+            menuItem2.DropDownItems.Add("Уволить с работы").Click += IsMDI_Form_Click5; ;
 
             // 
             // menuStrip
