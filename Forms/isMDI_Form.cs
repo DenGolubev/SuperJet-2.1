@@ -11,7 +11,6 @@ namespace SuperJet_2._1.Forms
             InitializeComponent();
         }
 
-        
         private void IsMDI_Form_Click4(object sender, EventArgs e)
         {
             Worcker_in new_Worcker_in = new Worcker_in();

@@ -9,13 +9,16 @@ namespace SuperJet_2._1.Forms
     {
         User_Language language = new User_Language();
         TextBox[] ArraytextBoxes = new TextBox[5];
+        private readonly string nameFormLabeltext = "Форма приема сотрудника";
 
         private void InitializeComponent()
         {
             MyHeight = 500;
             MyWidgth = 600;
+            Text = "Форма приема сотрудника";
+            WindowState = FormWindowState.Normal;
             Create_MyForm();
-            NameForm();
+            NameFormLable();
             GenerateLable();
             GenerateTextBox();
             Button button1 = GenerateButton();
@@ -23,14 +26,14 @@ namespace SuperJet_2._1.Forms
             this.Load += Worcker_in_Load;
         }
 
-        private void NameForm()
+        private void NameFormLable()
         {
             My_Label nameFormLabel = new My_Label();
             nameFormLabel.X = 150;
             nameFormLabel.Y = 30;
             nameFormLabel.MyHeight = 30;
             nameFormLabel.MyWidgth = 300;
-            nameFormLabel.Text = "Форма приема сотрудника";
+            nameFormLabel.Text = nameFormLabeltext;
             nameFormLabel.Create_MyLabel();
             Controls.Add(nameFormLabel);
         }
