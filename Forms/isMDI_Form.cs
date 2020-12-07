@@ -10,6 +10,14 @@ namespace SuperJet_2._1.Forms
         {
             InitializeComponent();
         }
+
+        private void IsMDI_Form_Click6(object sender, System.EventArgs e)
+        {
+            LabourProtection new_LabourProtection = new LabourProtection();
+            new_LabourProtection.MdiParent = this;
+            new_LabourProtection.Show();
+        }
+
         private void IsMDI_Form_Click5(object sender, System.EventArgs e)
         {
             Worcker_out new_Worcker_out = new Worcker_out();

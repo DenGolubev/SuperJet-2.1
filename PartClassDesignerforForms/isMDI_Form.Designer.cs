@@ -21,7 +21,7 @@ namespace SuperJet_2._1.Forms
             // 
             // ToolStripMenuItem
             // 
-            ToolStripMenuItem menuItem, menuItem1, menuItem2;
+            ToolStripMenuItem menuItem, menuItem1, menuItem2, menuItem3;
             menuItem = new ToolStripMenuItem("Файл");
             menuItem.DropDownItems.Add("Создать").Click += IsMDI_Form_Click; ;
             menuItem.DropDownItems.Add("Открыть").Click += IsMDI_Form_Click1; ;
@@ -32,6 +32,10 @@ namespace SuperJet_2._1.Forms
             menuItem2 = new ToolStripMenuItem("Сотрудники");
             menuItem2.DropDownItems.Add("Принять на работу").Click += IsMDI_Form_Click4; ;
             menuItem2.DropDownItems.Add("Уволить с работы").Click += IsMDI_Form_Click5; ;
+            menuItem3 = new ToolStripMenuItem("Охрана труда");
+            menuItem3.DropDownItems.Add("Внести данные").Click += IsMDI_Form_Click6; ;
+            menuItem3.DropDownItems.Add("Карточка сотрудника");
+
 
             // 
             // menuStrip
@@ -45,6 +49,7 @@ namespace SuperJet_2._1.Forms
             menu_Strip.Items.Add(menuItem);
             menu_Strip.Items.Add(menuItem1);
             menu_Strip.Items.Add(menuItem2);
+            menu_Strip.Items.Add(menuItem3);
 
             return menu_Strip;
         }

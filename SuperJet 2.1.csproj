@@ -72,6 +72,9 @@
     <Compile Include="Forms\isMDI_Form.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Forms\LabourProtection.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\Main_Form.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -86,6 +89,7 @@
     </Compile>
     <Compile Include="PartClassDesignerforForms\BaseForm.Designer.cs" />
     <Compile Include="PartClassDesignerforForms\isMDI_Form.Designer.cs" />
+    <Compile Include="PartClassDesignerforForms\LabourProtection.Designer.cs" />
     <Compile Include="PartClassDesignerforForms\Worcker_out.Designer.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
