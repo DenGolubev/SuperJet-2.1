@@ -9,8 +9,7 @@ namespace SuperJet_2._1.Forms
     {
         User_Language language = new User_Language();
         TextBox[] ArraytextBoxes = new TextBox[5];
-        private readonly string nameFormLabeltext = "Форма приема сотрудника";
-
+        
         private void InitializeComponent()
         {
             MyHeight = 500;
@@ -29,12 +28,7 @@ namespace SuperJet_2._1.Forms
         protected void NameFormLable()
         {
             My_Label nameFormLabel = new My_Label();
-            nameFormLabel.X = 150;
-            nameFormLabel.Y = 30;
-            nameFormLabel.MyHeight = 30;
-            nameFormLabel.MyWidgth = 300;
-            nameFormLabel.Text = nameFormLabeltext;
-            nameFormLabel.Create_MyLabel();
+            nameFormLabel.Create_MyLabel(30, 300, 150, 30, "Форма приема сотрудника");
             Controls.Add(nameFormLabel);
         }
 
@@ -44,12 +38,12 @@ namespace SuperJet_2._1.Forms
             for (int i = 0; i < ArrayLabels.Length; i++)
             {
                 My_Label l_box = new My_Label();
-                l_box.X = 30;
-                l_box.Y = 100 + (i * 40);
-                l_box.MyHeight = 30;
-                l_box.MyWidgth = 200;
-                l_box.Name = "Label" + (i + 1);
-                l_box = (My_Label)l_box.Create_MyLabel();
+                //l_box.X = 30;
+                //l_box.Y = 100 + (i * 40);
+                //l_box.MyHeight = 30;
+                //l_box.MyWidgth = 200;
+                //l_box.Name = "Label" + (i + 1);
+                l_box = (My_Label)l_box.Create_MyLabel(30, 200, 30, 100 + (i * 40), "Label" + (i + 1));
                 ArrayLabels[i] = l_box;
 
             }
@@ -95,12 +89,7 @@ namespace SuperJet_2._1.Forms
         protected Button GenerateButton()
         {
             My_Button button = new My_Button();
-            button.MyHeight = 70;
-            button.MyWidgth = 200;
-            button.X = 190;
-            button.Y = 370;
-            button.Text = "Принять";
-            button = (My_Button)button.Create_MyButton();
+            button = (My_Button)button.Create_MyButton(70, 200, 190, 370, "Принять");
             Controls.Add(button);
             return button;
         }
@@ -108,13 +97,9 @@ namespace SuperJet_2._1.Forms
         protected void GeneratePassword()
         {
             My_Label Password = new My_Label();
-            Password.X = 30;
-            Password.Y = 340;
-            Password.MyHeight = 30;
-            Password.MyWidgth = 300;
             string passVol = ArraytextBoxes[0].Text + ArraytextBoxes[1].Text + ArraytextBoxes[2].Text + ArraytextBoxes[3].Text;
             Password.Text = "Ваш пароль: " + passVol.GetHashCode();
-            Password.Create_MyLabel();
+            Password.Create_MyLabel(30, 300, 30, 340, Password.Text);
             Controls.Add(Password);
 
         }
@@ -122,12 +107,8 @@ namespace SuperJet_2._1.Forms
         protected void GenerateLogin()
         {
             My_Label Login = new My_Label();
-            Login.X = 30;
-            Login.Y = 300;
-            Login.MyHeight = 30;
-            Login.MyWidgth = 400;
             Login.Text = "Ваш логин: " + Translit(ArraytextBoxes[0].Text);
-            Login.Create_MyLabel();
+            Login.Create_MyLabel(30, 400, 30, 300, Login.Text);
             Controls.Add(Login);
 
         }

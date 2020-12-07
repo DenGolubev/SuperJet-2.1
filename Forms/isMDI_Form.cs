@@ -46,8 +46,9 @@ namespace SuperJet_2._1.Forms
 
         private void IsMDI_Form_Click1(object sender, EventArgs e)
         {
-            string my_Message = "Вы пытаетесь открыть файл";
-            MessageBox.Show(my_Message);
+            FileDownload fileDownload = new FileDownload();
+            fileDownload.MdiParent = this;
+            fileDownload.Show();
         }
 
         private void IsMDI_Form_Click(object sender, EventArgs e)

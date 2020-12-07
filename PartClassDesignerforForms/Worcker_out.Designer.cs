@@ -9,8 +9,6 @@ namespace SuperJet_2._1.Forms
         User_Language language = new User_Language();
         TextBox[] ArraytextBoxes = new TextBox[5];
 
-        private readonly string nameFormLabeltext = "Форма увольнения сотрудника";
-
         private void InitializeComponent()
         {
             MyHeight = 300;
@@ -27,47 +25,28 @@ namespace SuperJet_2._1.Forms
         protected void NameFormLable()
         {
             My_Label nameFormLabel = new My_Label();
-            nameFormLabel.X = 120;
-            nameFormLabel.Y = 30;
-            nameFormLabel.MyHeight = 30;
-            nameFormLabel.MyWidgth = 350;
-            nameFormLabel.Text = nameFormLabeltext;
-            nameFormLabel.Create_MyLabel();
+            nameFormLabel.Create_MyLabel(30, 350, 120, 30, "Форма увольнения сотрудника");
             Controls.Add(nameFormLabel);
         }
 
         protected void CreateLable()
         {
             My_Label l_box = new My_Label();
-            l_box.X = 20;
-            l_box.Y = 100;
-            l_box.MyHeight = 30;
-            l_box.MyWidgth = 250;
-            l_box.Text = "Уволить сотрудника:";
-            l_box = (My_Label)l_box.Create_MyLabel();
+            l_box = (My_Label)l_box.Create_MyLabel(30, 250, 20, 100, "Уволить сотрудника:");
             Controls.Add(l_box);
         }   
 
         protected void CreateCombobox()
         {
             My_Combobox c_box = new My_Combobox();
-            c_box.X = 280;
-            c_box.Y = 100;
-            c_box.MyHeight = 30;
-            c_box.MyWidgth = 280;
-            c_box = (My_Combobox)c_box.Create_MyCombobox();
+            c_box = (My_Combobox)c_box.Create_MyCombobox(30, 280, 280, 100);
             Controls.Add(c_box);
         }
 
         protected Button CreateButton()
         {
             My_Button button = new My_Button();
-            button.MyHeight = 70;
-            button.MyWidgth = 200;
-            button.X = 190;
-            button.Y = 170;
-            button.Text = "Уволить";
-            button = (My_Button)button.Create_MyButton();
+            button = (My_Button)button.Create_MyButton(70, 200, 190, 170, "Уволить");
             Controls.Add(button);
             return button;
         }

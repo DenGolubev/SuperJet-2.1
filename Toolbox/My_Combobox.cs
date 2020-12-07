@@ -5,15 +5,10 @@ namespace SuperJet_2._1.Toolbox
 {
     class My_Combobox: ComboBox
     {
-        public int X { get; set; }
-        public int Y { get; set; }
-        public int MyWidgth { get; set; }
-        public int MyHeight { get; set; }
-
-        public ComboBox Create_MyCombobox()
+        public ComboBox Create_MyCombobox(int height, int widgth, int x, int y)
         {
-            Size = new Size(MyWidgth, MyHeight);
-            Location = new Point(X, Y);
+            Size = new Size(widgth, height);
+            Location = new Point(x, y);
             return this;
         }
     }

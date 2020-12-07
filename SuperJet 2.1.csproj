@@ -69,6 +69,9 @@
     <Compile Include="Forms\BaseForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Forms\FileDownload.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\isMDI_Form.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -88,6 +91,7 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="PartClassDesignerforForms\BaseForm.Designer.cs" />
+    <Compile Include="PartClassDesignerforForms\FileDownload.Designer.cs" />
     <Compile Include="PartClassDesignerforForms\isMDI_Form.Designer.cs" />
     <Compile Include="PartClassDesignerforForms\LabourProtection.Designer.cs" />
     <Compile Include="PartClassDesignerforForms\Worcker_out.Designer.cs" />
@@ -103,7 +107,6 @@
     <Compile Include="Toolbox\My_Label.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Toolbox\My_openfiledialog.cs" />
     <Compile Include="Toolbox\My_TextBox.cs">
       <SubType>Component</SubType>
     </Compile>
