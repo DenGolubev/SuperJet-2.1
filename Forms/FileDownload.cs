@@ -1,4 +1,6 @@
-﻿using System.Windows.Forms;
+﻿using System;
+using System.Drawing;
+using System.Windows.Forms;
 
 
 namespace SuperJet_2._1.Forms
@@ -7,6 +9,7 @@ namespace SuperJet_2._1.Forms
     {
         Button Button1 = new Button();
         Label Label1 = new Label();
+        
 
         public FileDownload()
         {
@@ -15,8 +18,10 @@ namespace SuperJet_2._1.Forms
             Button1.Click += Button1_Click;
             Label1 = CreateLabel();
             
-
+            
         }
+
+        
 
         private void Button1_Click(object sender, System.EventArgs e)
         {
@@ -26,6 +31,13 @@ namespace SuperJet_2._1.Forms
                 FilePath = openFile.FileName;
                 Label1.Text = FilePath;
             }
+        }
+
+        private void CreateDataGridView1()
+        {
+            DataGridView dataGrid1 = new DataGridView();
+            dataGrid1 = GenerateDataGridView();
+
         }
     }
 }

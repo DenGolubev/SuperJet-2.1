@@ -104,6 +104,9 @@
     <Compile Include="Toolbox\My_Combobox.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Toolbox\My_DataGridView.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Toolbox\My_Label.cs">
       <SubType>Component</SubType>
     </Compile>

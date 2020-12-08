@@ -5,7 +5,7 @@ namespace SuperJet_2._1.Forms
 {
     partial class FileDownload: BaseForm
     {
-        string FilePath { get; set; }
+        public static string FilePath { get; set; }
 
         protected void InitializeComponent()
         {
@@ -14,6 +14,7 @@ namespace SuperJet_2._1.Forms
             Text = "Форма загрузки файла";
             Create_MyForm();
             NameFormLable();
+            
         }
 
         private void NameFormLable()
@@ -26,7 +27,7 @@ namespace SuperJet_2._1.Forms
         private Label CreateLabel()
         {
             My_Label label = new My_Label();
-            label = (My_Label)label.Create_MyLabel(30, 400, 30, 100, null);
+            label = (My_Label)label.Create_MyLabel(30, 600, 30, 100, null);
             Controls.Add(label);
             return label;
         }
@@ -37,6 +38,14 @@ namespace SuperJet_2._1.Forms
             button = (My_Button)button.Create_MyButton(70, 200, 190, 370, "Выбрать файл");
             Controls.Add(button);
             return button;
+        }
+
+        private DataGridView GenerateDataGridView()
+        {
+            My_DataGridView gridView = new My_DataGridView();
+            gridView = (My_DataGridView)gridView.Create_MyDataGridView(70, 200, 190, 370);
+            Controls.Add(gridView);
+            return gridView;
         }
 
     }
